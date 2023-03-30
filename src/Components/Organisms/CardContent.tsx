@@ -4,9 +4,10 @@ import { Data } from '../Types/UserDataModel';
 import './Cards.css';
 
 const CardContent: React.FC<{ data: Data[] }> = (props) => {
+    const { data } = props;
     return (
         <div className='Cards'>
-            {props.data.map((user, i) => {
+            {data.map((user, i) => {
                 return (
                     <React.Fragment key={i}>
                         <Card

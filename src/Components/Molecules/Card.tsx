@@ -1,12 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import '../../App.css';
 import Button from '../Atoms/Button';
 import { Data } from '../Types/UserDataModel';
 
-const Card = (props: Data) => {
-    const { name, username, email } = props;
-   
+const Card = ({ name, username, email }: Data) => {
     return (
         <div
             style={{
@@ -21,7 +17,7 @@ const Card = (props: Data) => {
             <h3>{username}</h3>
             <p>{name}</p>
             <p>{email}</p>
-            <Button />
+            <Button title='click' backgroundColor='black' color='white' />
         </div>
     );
 };
