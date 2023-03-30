@@ -1,30 +1,39 @@
 import React from 'react';
-import Card from '../Molecules/Card';
 import { Data } from '../Types/UserDataModel';
 import './Cards.css';
+import { Link } from 'react-router-dom';
 
-const CardContent: React.FC<{ data: Data[] }> = (props) => {
+const Table: React.FC<{ data: Data[] }> = (props) => {
     const { data } = props;
     return (
-        <div className='Cards'>
-            {data.map((user, i) => {
-                return (
-                    <React.Fragment key={i}>
-                        <Card
-                            name={user.name}
-                            username={user.username}
-                            email={user.email}
-                            address={user.address}
-                            phone={user.phone}
-                            id={user.id}
-                            website={user.website}
-                            company={user.company}
-                        />
-                    </React.Fragment>
-                );
-            })}
+        <div className='Container'>
+            <table>
+                <tbody>
+                    <tr>
+                        <th style={{ padding: 10 }}>name</th>
+                        <th style={{ padding: 10 }}>email</th>
+                        <th style={{ padding: 10 }}>username</th>
+                    </tr>
+                    {data.length > 0 &&
+                        data.map((user, i) => (
+                            <tr key={i}>
+                                <td style={{ padding: 10 }}>{user.name}</td>
+                                <td>{user.email}</td>
+
+                                <td>
+                                    <Link
+                                        style={{ color: 'black', textDecoration: 'none' }}
+                                        to={`/user-details/${user.id}`}
+                                    >
+                                        {user.username}
+                                    </Link>
+                                </td>
+                            </tr>
+                        ))}
+                </tbody>
+            </table>
         </div>
     );
 };
 
-export default CardContent;
+export default Table;
