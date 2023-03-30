@@ -1,12 +1,21 @@
 import React from 'react';
-import '../../App.css';
+import { ButtonPropsType } from '../Types/ButtonType';
 
-function Button() {
+const Button = (props: ButtonPropsType) => {
+    const { title, color, backgroundColor } = props;
     return (
-        <div style={{ background: 'black', borderRadius: 10, width: 120, color: 'white' }}>
-            <p>Click</p>
+        <div
+            style={{
+                background: backgroundColor,
+                borderRadius: 5,
+                width: 120,
+                color: color,
+                
+            }}
+        >
+            <p style={{ textAlign: 'center', padding: 10 }}>{title}</p>
         </div>
     );
-}
+};
 
 export default Button;

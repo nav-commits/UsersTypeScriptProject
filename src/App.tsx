@@ -1,8 +1,9 @@
 import React from 'react';
-import './App.css';
 import HomePage from './Components/Views/Homepage';
 import { useState, useEffect } from 'react';
 import { Data } from './Components/Types/UserDataModel';
+import { Routes, Route } from 'react-router-dom';
+import UserDetailPage from './Components/Views/UserDetailPage';
 
 function App() {
     const [data, setData] = useState<Data[]>([]);
@@ -11,11 +12,13 @@ function App() {
             .then((response) => response.json())
             .then((data) => setData(data));
     }, []);
-    console.log(data);
     return (
-        <div className='App'>
-            <HomePage data={data} />
-        </div>
+        <>
+            <Routes>
+                <Route path='/' element={<HomePage data={data} />} />
+                <Route path='/user-details/:id' element={<UserDetailPage />} />
+            </Routes>
+        </>
     );
 }
 
