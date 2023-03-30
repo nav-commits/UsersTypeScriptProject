@@ -2,6 +2,7 @@ import React from 'react';
 import { Data } from '../Types/UserDataModel';
 import './Cards.css';
 import { Link } from 'react-router-dom';
+import Button from '../Atoms/Button';
 
 const Table: React.FC<{ data: Data[] }> = (props) => {
     const { data } = props;
@@ -17,15 +18,19 @@ const Table: React.FC<{ data: Data[] }> = (props) => {
                     {data.length > 0 &&
                         data.map((user, i) => (
                             <tr key={i}>
-                                <td style={{ padding: 10 }}>{user.name}</td>
+                                <td>{user.name}</td>
                                 <td>{user.email}</td>
-
                                 <td>
                                     <Link
                                         style={{ color: 'black', textDecoration: 'none' }}
                                         to={`/user-details/${user.id}`}
+                                        state={user}
                                     >
-                                        {user.username}
+                                        <Button
+                                            title={user.username}
+                                            color='white'
+                                            backgroundColor='black'
+                                        />
                                     </Link>
                                 </td>
                             </tr>
