@@ -1,6 +1,6 @@
 import React from 'react';
 import { Data } from '../Types/UserDataModel';
-import './Cards.css';
+import './Table.css';
 import { Link } from 'react-router-dom';
 import Button from '../Atoms/Button';
 
@@ -29,7 +29,7 @@ const Table: React.FC<{ data: Data[] }> = (props) => {
                                         <Button
                                             title={user.username}
                                             color='white'
-                                            backgroundColor='black'
+                                            backgroundColor='grey'
                                         />
                                     </Link>
                                 </td>

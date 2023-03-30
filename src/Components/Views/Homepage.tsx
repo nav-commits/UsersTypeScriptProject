@@ -1,4 +1,4 @@
-import Table from '../Organisms/CardContent';
+import Table from '../Organisms/Table';
 import React from 'react';
 import { Data } from '../Types/UserDataModel';
 

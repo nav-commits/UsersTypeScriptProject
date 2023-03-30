@@ -8,9 +8,8 @@ const Button = (props: ButtonPropsType) => {
             style={{
                 background: backgroundColor,
                 borderRadius: 5,
-                width: 120,
                 color: color,
-                
+                marginRight: 20,
             }}
         >
             <p style={{ textAlign: 'center', padding: 10 }}>{title}</p>
