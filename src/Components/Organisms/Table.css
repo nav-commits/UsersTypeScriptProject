@@ -10,11 +10,9 @@ table {
     border: 2px solid grey;
     width: 800px;
     height: 200px;
-    text-align: left;
+    text-align: center;
 }
 
 th {
     border-bottom: 1px solid #ddd;
 }
-
-
